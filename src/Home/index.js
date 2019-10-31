@@ -60,7 +60,9 @@ class Home extends React.Component {
   };
 
   render() {
-    let listWidget = this.props.cities.map(this.displayWidget);
+    let listWidget = this.props.cities
+      .filter(city => city.name.includes(this.state.inputCity))
+      .map(this.displayWidget);
     console.log("props are :", this.props.cities);
     return (
       <div className="home">
