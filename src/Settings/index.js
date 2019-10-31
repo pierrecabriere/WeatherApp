@@ -5,6 +5,8 @@ import "./index.scss";
 import { getWeatherFromCity } from "../services/getWeatherFromCity";
 import { connect } from "react-redux";
 import { addCity, removeCity } from "../actions/cityActions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 const API_TOKEN = "4051ce7fe1ef8cb0d6d4bf227e129df3";
 
@@ -21,7 +23,7 @@ class Settings extends React.Component {
       this.state.cityToAdd,
       API_TOKEN
     );
-    console.log("response from api :", responseFromApi);
+    console.log("response from api :", responseFromApi.main);
     if (responseFromApi !== "ERROR") {
       this.setState({
         errorCaught: false
@@ -31,9 +33,15 @@ class Settings extends React.Component {
       const weather = weatherFromApi[0];
       const newCity = {
         name: this.state.cityToAdd,
-        temp: Math.round(tempFromApi.temp - 273),
         weather: weather.main,
-        icon: weather.icon
+        icon: weather.icon,
+        infos: {
+          humidity: responseFromApi.main.humidity,
+          pressure: responseFromApi.main.pressure,
+          temp: Math.round(tempFromApi.temp - 273),
+          temp_min: Math.round(responseFromApi.main.temp_min - 273),
+          temp_max: Math.round(responseFromApi.main.temp_max - 273)
+        }
       };
       this.props.addCity(newCity);
       this.setState({ cityToAdd: "" });
@@ -71,7 +79,12 @@ class Settings extends React.Component {
         <div className="settings-content">
           <div className="settings-content-back">
             <Link to="/">
-              <button>Back to home page</button>
+              <button>
+                <div className="settings-content-back-button">
+                  Back
+                  <FontAwesomeIcon icon={faSignOutAlt} />
+                </div>
+              </button>
             </Link>
           </div>
           <div className="settings-content-add">
@@ -81,7 +94,9 @@ class Settings extends React.Component {
                 value={this.state.cityToAdd}
                 onChange={e => this.setState({ cityToAdd: e.target.value })}
               />
-              <button type="submit">Add</button>
+              <button type="submit" className="settings-content-add-button">
+                Add
+              </button>
               {this.state.errorCaught ? "Enter a valid city name" : null}
             </form>
           </div>

@@ -2,15 +2,27 @@ const initialState = {
   cities: [
     {
       name: "Paris",
-      temp: 11,
       weather: "Clouds",
-      icon: "04d"
+      icon: "04d",
+      infos: {
+        humidity: 81,
+        pressure: 1017,
+        temp: 12,
+        temp_max: 12,
+        temp_min: 10
+      }
     },
     {
       name: "Montpellier",
-      temp: 20,
       weather: "Clouds",
-      icon: "04d"
+      icon: "04d",
+      infos: {
+        humidity: 63,
+        pressure: 1016,
+        temp: 18,
+        temp_max: 20,
+        temp_min: 17
+      }
     }
   ]
 };
