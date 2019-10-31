@@ -23,6 +23,7 @@ class Home extends React.Component {
     });
   };
 
+  // Used to determine which icon from FontAwesome is needed
   weatherIcon = weather => {
     if (weather === "Clear") return faSun;
     if (weather === "Clouds") return faCloud;
