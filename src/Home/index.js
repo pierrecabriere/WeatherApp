@@ -48,11 +48,11 @@ class Home extends React.Component {
           <div className="city-infos">
             <div className="city-infos-1">
               <span>Humidity : {city.infos.humidity} %</span>
-              <span>Pressure : {city.infos.pressure} hPa</span>
+              <span>T°(C) max : {city.infos.temp_max} °C</span>
             </div>
             <div className="city-infos-2">
-              <span>Temp max : {city.infos.temp_max} °C</span>
-              <span>Temp min : {city.infos.temp_min} </span>
+              <span>Pressure : {city.infos.pressure} hPa</span>
+              <span>T°(C) min : {city.infos.temp_min} </span>
             </div>
           </div>
         </div>
