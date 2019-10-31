@@ -17,13 +17,12 @@ class Settings extends React.Component {
     errorCaught: false
   };
   addCity = async e => {
-    console.log("ENTER IN ADD CITY");
     e.preventDefault();
     const responseFromApi = await getWeatherFromCity(
       this.state.cityToAdd,
       API_TOKEN
     );
-    console.log("response from api :", responseFromApi.main);
+    console.log("response from api :", responseFromApi);
     if (responseFromApi !== "ERROR") {
       this.setState({
         errorCaught: false
@@ -35,6 +34,7 @@ class Settings extends React.Component {
         name: this.state.cityToAdd,
         weather: weather.main,
         icon: weather.icon,
+        country: responseFromApi.sys.country,
         infos: {
           humidity: responseFromApi.main.humidity,
           pressure: responseFromApi.main.pressure,
@@ -98,8 +98,12 @@ class Settings extends React.Component {
               <button type="submit" className="settings-content-add-button">
                 Add
               </button>
-              {this.state.errorCaught ? "Enter a valid city name" : null}
             </form>
+            {this.state.errorCaught ? (
+              <span className="settings-content-error">
+                Enter a valid city name
+              </span>
+            ) : null}
           </div>
           <div className="settings-content-remove">
             <span className="settings-content-title">Remove a city</span>

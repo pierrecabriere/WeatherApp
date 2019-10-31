@@ -2,6 +2,7 @@ const initialState = {
   cities: [
     {
       name: "Paris",
+      country: "FR",
       weather: "Clouds",
       icon: "04d",
       infos: {
@@ -14,6 +15,7 @@ const initialState = {
     },
     {
       name: "Montpellier",
+      country: "FR",
       weather: "Clouds",
       icon: "04d",
       infos: {

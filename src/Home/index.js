@@ -42,7 +42,9 @@ class Home extends React.Component {
           {/* <FontAwesomeIcon icon={this.weatherIcon(city.weather)} /> */}
         </div>
         <div className="city-name">
-          <div className="city-title">{city.name}</div>
+          <div className="city-title">
+            {city.name}, {city.country}
+          </div>
           <div className="city-infos">
             <div className="city-infos-1">
               <span>Humidity : {city.infos.humidity} %</span>

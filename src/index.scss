@@ -18,6 +18,10 @@ body {
     list-style-type: none;
   }
 
+  input {
+    box-shadow: 0 5px 5px rgba($color-black, 0.1);
+  }
+
   button {
     cursor: pointer;
     outline: none;
@@ -27,6 +31,7 @@ body {
     border: none;
     border-radius: 5px;
     background-color: $color-primary;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
     // transition: all 0.3s ease;
     font-size: 1rem;
 
