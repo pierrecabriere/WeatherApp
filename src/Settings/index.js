@@ -108,7 +108,11 @@ class Settings extends React.Component {
           <div className="settings-content-remove">
             <span className="settings-content-title">Remove a city</span>
             <div className="settings-content-remove-content">
-              <ul>{listCities}</ul>
+              <ul
+                className={this.props.cities.length > 5 ? "add-scroll" : null}
+              >
+                {listCities}
+              </ul>
               <button onClick={() => this.removeCity()}>Remove</button>
             </div>
           </div>

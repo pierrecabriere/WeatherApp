@@ -78,18 +78,19 @@
           border-radius: 5px;
           width: 50rem;
           box-shadow: 0 5px 5px rgba($color-black, 0.1);
+          max-height: 260px;
           li {
             cursor: pointer;
             transition: all 0.2s ease;
             &:hover {
-              background-color: aquamarine;
+              background-color: $color-primary;
             }
 
             .city-item {
               padding: 1rem;
             }
             .city-selected {
-              background-color: aquamarine;
+              background-color: $color-primary;
             }
           }
         }
@@ -101,4 +102,8 @@
       }
     }
   }
+}
+
+.add-scroll {
+  overflow-y: scroll;
 }
