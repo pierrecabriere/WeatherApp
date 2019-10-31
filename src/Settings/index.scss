@@ -1,0 +1,36 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1rem;
+
+  &-content {
+    &-remove {
+      display: flex;
+      align-items: center;
+      ul {
+        border: 1px solid #181818;
+        width: 70%;
+        li {
+          cursor: pointer;
+          transition: all 0.2s ease;
+          &:hover {
+            background-color: aquamarine;
+          }
+
+          .city-item {
+            padding: 1rem;
+          }
+          .city-selected {
+            background-color: aquamarine;
+          }
+        }
+      }
+      button {
+        margin: auto;
+        height: 3rem;
+        width: 10rem;
+      }
+    }
+  }
+}

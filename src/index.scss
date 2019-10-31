@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 3rem;
+  font-family: "Open sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 65%;
+  box-sizing: border-box;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+
+  button {
+    cursor: pointer;
+    margin: auto;
+    height: 3rem;
+    width: 10rem;
+    border: none;
+    border-radius: 5px;
+  }
+}
