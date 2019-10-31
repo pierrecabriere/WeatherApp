@@ -88,6 +88,7 @@ class Settings extends React.Component {
             </Link>
           </div>
           <div className="settings-content-add">
+            <span className="settings-content-title">Add a city</span>
             <form onSubmit={this.addCity}>
               <input
                 placeholder="Enter a city"
@@ -101,8 +102,11 @@ class Settings extends React.Component {
             </form>
           </div>
           <div className="settings-content-remove">
-            <ul>{listCities}</ul>
-            <button onClick={() => this.removeCity()}>Remove</button>
+            <span className="settings-content-title">Remove a city</span>
+            <div className="settings-content-remove-content">
+              <ul>{listCities}</ul>
+              <button onClick={() => this.removeCity()}>Remove</button>
+            </div>
           </div>
         </div>
       </div>
