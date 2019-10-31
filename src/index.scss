@@ -1,3 +1,5 @@
+@import "./_variable/index.scss";
+
 body {
   margin: 0;
   padding: 3rem;
@@ -6,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 65%;
   box-sizing: border-box;
+  background-color: white;
 
   * {
     margin: 0;
@@ -17,10 +20,33 @@ body {
 
   button {
     cursor: pointer;
+    outline: none;
     margin: auto;
     height: 3rem;
     width: 10rem;
     border: none;
     border-radius: 5px;
+    background-color: $color-primary;
+    // transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      outline: none;
+      animation: moveInBottom 0.2s;
+    }
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-5px);
   }
 }

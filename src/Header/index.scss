@@ -1,7 +1,28 @@
-$color-background: #f1f0f5;
+$color-background: rgb(233, 233, 233);
 
-.header-wrapper {
-  width: 100%;
-  height: 10vh;
-  background-color: $color-background;
+.header {
+  padding: 2rem 1rem;
+  background-color: #83c0fa;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  img {
+    width: 40px;
+  }
+
+  &-appName {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-title {
+    flex: 7;
+    display: flex;
+    justify-content: center;
+    margin-right: 1.6rem;
+  }
 }

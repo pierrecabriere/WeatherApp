@@ -31,6 +31,8 @@ class Home extends React.Component {
   };
 
   displayWidget = city => {
+    let date = new Date();
+    console.log("date is :", date);
     return (
       <li key={city.name} className="city">
         <div className="city-weatherIcon">
@@ -42,7 +44,7 @@ class Home extends React.Component {
           {/* <FontAwesomeIcon icon={this.weatherIcon(city.weather)} /> */}
         </div>
         <div className="city-name">{city.name}</div>
-        <div className="city-temp">{city.temp}</div>
+        <div className="city-temp">{city.temp}°C</div>
       </li>
     );
   };
