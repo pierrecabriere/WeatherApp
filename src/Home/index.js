@@ -25,10 +25,17 @@ class Home extends React.Component {
 
   // Used to determine which icon from FontAwesome is needed
   weatherIcon = weather => {
-    if (weather === "Clear") return faSun;
-    if (weather === "Clouds") return faCloud;
-    if (weather === "Rain" || weather === "Drizzle") return faCloudRain;
-    if (weather === "Snow") return faSnowflake;
+    switch (weather) {
+      case "Clear":
+        return faSun;
+      case "Clouds":
+        return faCloud;
+      case "Rain":
+      case "Drizzle":
+        return faCloudRain;
+      case "Snow":
+        return faSnowflake;
+    }
   };
 
   displayWidget = city => {
